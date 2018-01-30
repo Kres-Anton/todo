@@ -1,0 +1,21 @@
+<div class="showPlace">
+	<div class="taskName" (click)="selectAction()">
+			<span *ngIf="!(isSelected())">
+				{{task.name}}
+			</span>
+			<input type="text" *ngIf="isSelected()" 
+			[(ngModel)]="task.name"
+			(focusout)="selectAction()"
+			focus
+			>
+	</div>
+	<div class="taskDescription">
+		<textarea [(ngModel)]="task.description" rows="10" cols="45"></textarea>
+	</div>
+	<div class="form-group">
+        <button class="btn" (click)="saveData(task)">Сохранить</button>
+    </div>
+    <div *ngIf="done">
+        <div>Данные сохранены</div>
+    </div>
+</div>

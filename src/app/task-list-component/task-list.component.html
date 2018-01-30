@@ -1,0 +1,24 @@
+<div class="showPlace">
+	<table class="table table-sm table-bordered table-striped">
+		<tr><th>Id</th><th>Наименование</th><th>Теги</th><th>Потраченной время</th><th>Общая оценка</th><th>Дата окончания</th></tr>
+		
+		<ng-template ngFor let-task [ngForOf]="getData()">
+		<tr *ngIf="task.obj_status=='active'" 
+			[class.bg-danger]="task.is_high_priority==true"
+			[routerLink]="['detail',task.id]">
+		<td>{{task.id}}</td>
+		<td>{{task.name}}</td>
+		<td>
+			<ul>
+				<li *ngFor="let tag of task.tags">
+					{{tag}}
+				</li>
+			</ul>
+		</td>
+		<td>{{task.actual_effort}}</td>
+		<td>{{task.estimated_effort}}</td>
+		<td>{{task.due_date | date:"dd-MM-yyyy"}}</td>
+		</tr>
+		</ng-template>
+	</table>
+</div>

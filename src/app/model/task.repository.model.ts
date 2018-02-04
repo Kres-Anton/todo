@@ -9,16 +9,19 @@ export class Model {
 	private tasks: Task[] = [];
 	private locator =(t: Task,id: number)=> t.id == id;
 	
-	constructor (private httpService:HttpService ){
+	constructor (private httpService:HttpService ){	}
+	
+	getData(){
 		this.httpService.getData().subscribe(data => this.tasks = data);
 	}
 		
 	
-	getTasks(): Task[]{
+	getTasks(): Task[]{		
 		return this.tasks;
 	}
 	
 	getTask(id: number) : Task {
+		this.httpService.getData().subscribe(data => this.tasks = data);
 		return this.tasks.find(t => this.locator(t,id));
 	}
 	

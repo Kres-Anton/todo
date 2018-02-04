@@ -3,7 +3,7 @@
 		<tr><th>Id</th><th>Наименование</th><th>Теги</th><th>Потраченной время</th><th>Общая оценка</th><th>Дата окончания</th></tr>
 		
 		<ng-template ngFor let-task [ngForOf]="getData()">
-		<tr *ngIf="task.obj_status=='active'" 
+		<tr calss="listElement" *ngIf="task.obj_status=='active'" 
 			[class.bg-danger]="task.is_high_priority==true"
 			[routerLink]="['detail',task.id]">
 		<td>{{task.id}}</td>

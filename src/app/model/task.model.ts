@@ -8,6 +8,7 @@ export class Task {
 		public start_date?: string,
 		public is_completed?: boolean,
 		public is_archived?: boolean,
+		public is_high_priority?:boolean,
 		public estimated_effort?: number,
 		public actual_effort?: number,
 		public physical_progress?: number,

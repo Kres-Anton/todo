@@ -14,7 +14,7 @@ export class HttpService{
 	}
 	
 	
-	postData(task: Task){         
-        return this.http.put('http://localhost:7001/api/task', task); 
+	postData(task: Task): Observable<Task>{         
+       return this.http.put('http://localhost:7001/api/task', task);
     }
 }

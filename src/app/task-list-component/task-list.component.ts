@@ -7,12 +7,15 @@ import { Model } from '../model/task.repository.model';
     templateUrl: './task-list.component.html',
     styleUrls: ['/task-list.style.less']
 })
-export class TaskListComponent { 
-	
+export class TaskListComponent {
+	 
+
 	constructor (private taskModel: Model) {}
-
-
-
+	
+	ngOnInit(){
+		this.taskModel.getData();
+	}
+	
     getData(){
     	return this.taskModel.getTasks();
     }

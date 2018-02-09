@@ -10,8 +10,9 @@
     "tscwatch": "tsc -w",
     "karma": "karma start karma.conf.js",
     "tests": "npm run karma",
+    "gulpGlobalInstall":"sudo npm install -g github:gulpjs/gulp#4.0",
     "gulp":"NODE_ENV=production gulp",
-    "start": "npm install && npm run gulp"
+    "start": "npm run gulpGlobalInstall && npm install && npm run gulp"
   },
   "author": "",
   "license": "ISC",

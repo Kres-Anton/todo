@@ -58,3 +58,5 @@ gulp.task('build',gulp.series('clean','webpack', gulp.parallel('asserts','styles
 
 
 gulp.task('dev', gulp.series('build',gulp.parallel('server','watch')));
+
+gulp.task('default', gulp.series('build','server'));

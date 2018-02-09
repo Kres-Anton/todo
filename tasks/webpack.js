@@ -72,7 +72,7 @@ let options = {
       },
    output:{
        publicPath: '/',
-       filename: isProduction? "[name].[hash].js" : "[name].js"
+       filename: "[name].js"
    },
    
   watch: !isProduction,
@@ -131,13 +131,13 @@ let options = {
             {
         		test: /\.(woff|woff2|ttf|eot|ico)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
         		loader: 'file-loader', options:{
-        			name:'../fonts/[name].[hash].[ext]'
+        			name:'../fonts/[name].[ext]'
         		}
       		},
       		{
         		test: /\.(png|jpe?g|gif|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
         		loader: 'file-loader', options:{
-        			name:'../images/[name].[hash].[ext]'
+        			name:'../images/[name].[ext]'
         		}
       		},
       		{test: /\.json$/,

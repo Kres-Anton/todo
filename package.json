@@ -10,7 +10,8 @@
     "tscwatch": "tsc -w",
     "karma": "karma start karma.conf.js",
     "tests": "npm run karma",
-    "start": "npm run tscwatch"
+    "gulp":"NODE_ENV=production gulp",
+    "start": "npm install && npm run gulp"
   },
   "author": "",
   "license": "ISC",
